@@ -76,11 +76,9 @@ function LogoTile({logo}: {logo: Logo}) {
 // the middle copy (`.logo-marquee` in globals.css), so there is always a logo above and below.
 function LogoMarquee({
 	logos,
-	delayMs,
 	reverse,
 }: {
 	logos: Logo[];
-	delayMs: number;
 	reverse: boolean;
 }) {
 	return (
@@ -89,7 +87,6 @@ function LogoMarquee({
 				className="logo-marquee"
 				style={{
 					animationDuration: `${LOGO_MS * logos.length}ms`,
-					animationDelay: `${delayMs}ms`,
 					animationDirection: reverse ? 'reverse' : 'normal',
 				}}
 			>
@@ -106,7 +103,8 @@ function LogoMarquee({
 }
 
 // Personal Agent Proxy between the agents on its left and the services on its right, the agents
-// scrolling down and the services up, like paper.design's dock.
+// scrolling down and the services up, like paper.design's dock. Both sides move a logo in the same
+// time from the same start, so their logos line up with Personal Agent Proxy together.
 export function LogoDock({className}: {className?: string}) {
 	return (
 		<div
@@ -115,7 +113,7 @@ export function LogoDock({className}: {className?: string}) {
 				className,
 			)}
 		>
-			<LogoMarquee logos={AGENTS} delayMs={0} reverse />
+			<LogoMarquee logos={AGENTS} reverse />
 			<LogoTile
 				logo={{
 					name: 'Personal Agent Proxy',
@@ -125,7 +123,7 @@ export function LogoDock({className}: {className?: string}) {
 					tile: 'bg-white p-2 sm:p-2.5 dark:bg-black',
 				}}
 			/>
-			<LogoMarquee logos={SERVICES} delayMs={-LOGO_MS / 2} reverse={false} />
+			<LogoMarquee logos={SERVICES} reverse={false} />
 		</div>
 	);
 }
