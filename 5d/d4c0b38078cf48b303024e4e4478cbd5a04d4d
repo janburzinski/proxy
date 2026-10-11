@@ -1,0 +1,21 @@
+packages/website/src/components/logo-dock.tsx
+  s_8d62a4798ab931::t_a53947e4225355 106-107,116,126
+packages/website/src/app/globals.css
+  s_8d62a4798ab931::t_0cbd32dbf27754 26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "5dd4c0b38078cf48b303024e4e4478cbd5a04d4d",
+  "prompts": {},
+  "sessions": {
+    "s_8d62a4798ab931": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "02a33e9f-0de6-4709-af78-e9a922b668cd",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Jan Burzinski <156842394+janburzinski@users.noreply.github.com>"
+    }
+  }
+}
